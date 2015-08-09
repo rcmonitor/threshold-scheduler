@@ -1,0 +1,29 @@
+{
+  "name": "threshold-scheduler",
+  "version": "1.0.0",
+  "description": "helps schedule events every given time with given time threshold",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcmonitor/threshold-scheduler.git"
+  },
+  "keywords": [
+    "scheduler",
+    "threshold",
+    "offset"
+  ],
+  "author": "rcmonitor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcmonitor/threshold-scheduler/issues"
+  },
+  "homepage": "https://github.com/rcmonitor/threshold-scheduler",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "helpers-global": "^2.5.1",
+    "mocha": "^2.2.5"
+  }
+}

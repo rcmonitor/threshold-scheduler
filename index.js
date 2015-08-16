@@ -4,17 +4,37 @@
  */
 
 var Scheduler = require('./lib/scheduler');
-//var FileLogger = require('helpers-global').FileLogger;
+
+////	usage example:
+//var hpg = require('helpers-global');
+//var FileLogger = hpg.FileLogger;
+//var Parameter = hpg.ParameterObject;
 //
-//var oFileLogger = new FileLogger('./log/test.log');
+//var path = require('path');
+//
+//var strLogFilePath = path.join(__dirname, 'test', 'log', 'test.log');
+//
+//var oFileLogger = new FileLogger(strLogFilePath);
+//console.log(oFileLogger.error);
+//
 //
 //var testConsole = function(){
-//	//console.log(this);
-//	console.log('run in some' + ' seconds');
+//	console.log('run in some seconds');
 //};
 //
-//var oScheduler = new Scheduler(2, 10, oFileLogger);
-//oScheduler.run(testConsole);
+//
+//var oParameter = new Parameter();
+//oParameter.time = 1;
+//oParameter.threshold = 5;
+//oParameter.fileLogger = oFileLogger;
+//oParameter.callback = testConsole;
+//
+//var oScheduler = new Scheduler(oParameter);
+//
+//var arErrors = oScheduler.errors;
+//console.log(arErrors);
+//
+//oScheduler.run();
 
 
 module.exports = Scheduler;

@@ -4,6 +4,7 @@
  */
 
 require('chai').should();
+var ParameterObject = require('helpers-global').ParameterObject;
 
 var Scheduler = require('../index');
 
@@ -12,14 +13,21 @@ describe('scheduler tests', function(){
 
 	describe('#run() function', function(){
 
-		var oScheduler = new Scheduler(10, 8);
 
 		it('should execute callback', function(done){
 
-			oScheduler.run(function(){
+			var oParameter = new ParameterObject();
+			oParameter.time = 10;
+			oParameter.threshold = 8;
+			oParameter.callback = done;
 
-				done();
-			});
+			var oScheduler = new Scheduler(oParameter);
+
+			var arErrors = oScheduler.errors;
+			arErrors.should.be.an('array');
+			arErrors.should.be.empty;
+
+			oScheduler.run();
 		})
 	})
 });

@@ -10,6 +10,7 @@ var Scheduler = require('../index');
 
 var hpg = require('helpers-global');
 var FileLogger = hpg.FileLogger;
+var Parameter = hpg.ParameterObject;
 
 var strLogDirPath = __dirname + '/log';
 var strLogFilePath = strLogDirPath + '/test.log';
@@ -34,9 +35,20 @@ describe('scheduler logger test', function(){
 
 		it('should run given callback and log to file', function(){
 			var oFileLogger = new FileLogger(strLogFilePath);
-			var oScheduler = new Scheduler(5, 2, oFileLogger);
 
-			oScheduler.run(fCallback);
+			var oParameter = new Parameter();
+			oParameter.time = 5;
+			oParameter.threshold = 2;
+			oParameter.fileLogger = oFileLogger;
+			oParameter.callback = fCallback;
+
+			var oScheduler = new Scheduler(oParameter);
+
+			var arErrors = oScheduler.errors;
+			arErrors.should.be.an('array');
+			arErrors.should.be.empty;
+
+			oScheduler.run();
 
 			var strLogFile = fs.readFileSync(strLogFilePath, 'utf8');
 

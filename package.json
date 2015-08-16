@@ -1,6 +1,6 @@
 {
   "name": "threshold-scheduler",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "helps schedule events every given time with given time threshold",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/rcmonitor/threshold-scheduler",
   "devDependencies": {
     "chai": "^3.2.0",
-    "helpers-global": "^2.5.1",
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "helpers-global": "^2.6.1"
   }
 }

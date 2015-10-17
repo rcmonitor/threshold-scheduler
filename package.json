@@ -1,6 +1,6 @@
 {
   "name": "threshold-scheduler",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "helps schedule events every given time with given time threshold",
   "main": "index.js",
   "scripts": {
